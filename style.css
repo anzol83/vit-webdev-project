@@ -1,0 +1,144 @@
+/* CSS */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* Background Image for Landing Page */
+.hero {
+    background: url('images/technology-computer-circuit-boards-electricity-wallpaper-preview.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    animation: fade-in 2s ease-in-out;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fade-in 2.5s ease-in-out;
+}
+
+/* Title Animation */
+.animated-title {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    animation: slide-in 2s forwards;
+}
+
+@keyframes slide-in {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Profiles Section */
+.profiles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.student-profile {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 15px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.student-profile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.student-profile::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 10%, transparent 60%);
+    animation: rotate-bg 6s linear infinite;
+    z-index: 1;
+}
+
+.student-profile h2 a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.student-profile h2 a:hover {
+    text-decoration: underline;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #4CAF50;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Animation */
+@keyframes rotate-bg {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
